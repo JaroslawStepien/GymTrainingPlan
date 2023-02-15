@@ -13,9 +13,13 @@
   <%= render 'home/header' %>
 
   <div class="container">
+    <div class="position">
+      <div class="position-fixed m-4 start-50 translate-middle-x">
   <% flash.each do |name, msg| %>
     <%= content_tag(:div, msg, class: "alert alert-info") %>
   <% end %>
+      </div>
+    </div>
     <%= yield %>
   </div>
   </body>
