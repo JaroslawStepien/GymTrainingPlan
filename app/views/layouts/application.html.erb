@@ -10,8 +10,9 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
+  <div class="sticky-top">
   <%= render 'home/header' %>
-
+  </div>
   <div class="container">
       <div class="d-flex justify-content-center m-4" >
   <% flash.each do |name, msg| %>
