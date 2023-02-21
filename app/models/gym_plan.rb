@@ -1,0 +1,2 @@
+class GymPlan < ApplicationRecord
+end

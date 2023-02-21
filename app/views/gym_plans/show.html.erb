@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @gym_plan %>
+
+<div>
+  <%= link_to "Edit this gym plan", edit_gym_plan_path(@gym_plan) %> |
+  <%= link_to "Back to gym plans", gym_plans_path %>
+
+  <%= button_to "Destroy this gym plan", @gym_plan, method: :delete %>
+</div>
