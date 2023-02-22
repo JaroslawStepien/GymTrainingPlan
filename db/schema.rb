@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_21_210207) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_203157) do
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.integer "number_of_series"
+    t.integer "number_of_reps"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "GymPlan_id"
+    t.index ["GymPlan_id"], name: "index_exercises_on_GymPlan_id"
+  end
+
   create_table "gym_plans", force: :cascade do |t|
     t.string "name"
     t.integer "number_of_days"
