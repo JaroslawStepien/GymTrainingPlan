@@ -15,6 +15,7 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'jquery-rails'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
 
 
 group :development, :test do
