@@ -16,7 +16,7 @@ class GymPlansController < ApplicationController
 
   # GET /gym_plans/new
   def new
-    @gym_plan = GymPlan.new
+    @gym_plan = current_user.gym_plans.new
   end
 
   # GET /gym_plans/1/edit
@@ -25,7 +25,7 @@ class GymPlansController < ApplicationController
 
   # POST /gym_plans or /gym_plans.json
   def create
-    @gym_plan = GymPlan.new(gym_plan_params)
+    @gym_plan = current_user.gym_plans.new(gym_plan_params)
 
     respond_to do |format|
       if @gym_plan.save
