@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_22_203157) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_200949) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.integer "number_of_series"
     t.integer "number_of_reps"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "GymPlan_id"
-    t.index ["GymPlan_id"], name: "index_exercises_on_GymPlan_id"
+    t.integer "gym_plan_id"
+    t.index ["gym_plan_id"], name: "index_exercises_on_gym_plan_id"
   end
 
   create_table "gym_plans", force: :cascade do |t|
@@ -26,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_203157) do
     t.integer "number_of_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_gym_plans_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
