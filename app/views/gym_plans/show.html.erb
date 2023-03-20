@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<div class="d-flex justify-content-center">
+  <%= render @gym_plan %>
+</div>
 
-<%= render @gym_plan %>
-
-<div>
+<p>
+  <div class="d-flex justify-content-center">
   <%= link_to "Edit this gym plan", edit_gym_plan_path(@gym_plan) %> |
   <%= link_to "Back to gym plans", gym_plans_path %>
-
-  <%= button_to "Destroy this gym plan", @gym_plan, method: :delete %>
+  </div>
+</p>
+<div class="d-flex justify-content-center">
+  <%= button_to "Destroy this gym plan", @gym_plan, method: :delete, class: "btn btn-primary" %>
 </div>

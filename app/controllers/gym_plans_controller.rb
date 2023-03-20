@@ -10,6 +10,8 @@ class GymPlansController < ApplicationController
 
   # GET /gym_plans/1 or /gym_plans/1.json
   def show
+    @gym_plan = GymPlan.find(params[:id])
+    @exercise = @gym_plan.exercises
   end
 
   # GET /gym_plans/new
