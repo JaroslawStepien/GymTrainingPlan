@@ -33,7 +33,7 @@ class ExercisesController < ApplicationController
 
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully created." }
+        format.html { redirect_to gym_plan_exercises_url(@exercise), notice: "Exercise was successfully created." }
         format.json { render :show, status: :created, location: @exercise }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +46,7 @@ class ExercisesController < ApplicationController
   def update
     respond_to do |format|
       if @exercise.update(exercise_params)
-        format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully updated." }
+        format.html { redirect_to gym_plan_exercises_url(@exercise), notice: "Exercise was successfully updated." }
         format.json { render :show, status: :ok, location: @exercise }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -60,7 +60,7 @@ class ExercisesController < ApplicationController
     @exercise.destroy
 
     respond_to do |format|
-      format.html { redirect_to exercises_url, notice: "Exercise was successfully destroyed." }
+      format.html { redirect_to gym_plan_exercises_url, notice: "Exercise was successfully destroyed." }
       format.json { head :no_content }
     end
   end
