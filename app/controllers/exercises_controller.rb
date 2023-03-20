@@ -4,7 +4,8 @@ class ExercisesController < ApplicationController
 
   # GET /exercises or /exercises.json
   def index
-    @exercises = Exercise.all
+    @gym_plan = GymPlan.find(params[:gym_plan_id])
+    @exercises = @gym_plan.exercises
   end
 
   # GET /exercises/1 or /exercises/1.json
