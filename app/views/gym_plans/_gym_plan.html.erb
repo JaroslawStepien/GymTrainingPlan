@@ -1,12 +1,17 @@
-<div id="<%= dom_id gym_plan %>">
-  <p>
-    <strong>Name:</strong>
-    <%= gym_plan.name %>
-  </p>
 
-  <p>
-    <strong>Number of days:</strong>
-    <%= gym_plan.number_of_days %>
-  </p>
+<div class="card text-center">
+  <div class="card-header">
+   <h6><%= gym_plan.name %>, Number of days: <%= gym_plan.number_of_days %></h6>
+  </div>
 
+  <% gym_plan.exercises.map do |item| %>
+    <div class="card-body">
+      <h5 class="card-title"> <%= item.name %> </h5>
+    </div>
+      <p class="card-text"> Series: <%= item.number_of_series %></p>
+      <p class="card-text"> Reps: <%= item.number_of_reps %></p>
+   <% end %>
+   <div class="card-footer text-muted">
+     <%= link_to "Show this gym plan", gym_plan %>
+   </div>
 </div>
