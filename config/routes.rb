@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     resources :exercises
   end
   devise_for :users
-  root 'home#index'
+  root 'gym_plans#index'
   get 'home/about'
 end
