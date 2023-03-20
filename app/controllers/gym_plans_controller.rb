@@ -1,5 +1,7 @@
 class GymPlansController < ApplicationController
   before_action :set_gym_plan, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /gym_plans or /gym_plans.json
   def index
@@ -66,5 +68,9 @@ class GymPlansController < ApplicationController
     # Only allow a list of trusted parameters through.
     def gym_plan_params
       params.require(:gym_plan).permit(:name, :number_of_days)
+    end
+
+  def correct_user
+    @gym_plan = current_user.gym_plans.find_by(id: params[:id])
     end
 end
