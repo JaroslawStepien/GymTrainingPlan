@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Gym plans</h1>
-
-<div id="gym_plans">
-  <% @gym_plans.each do |gym_plan| %>
-    <%= render gym_plan %>
-    <p>
-      <%= link_to "Show this gym plan", gym_plan %>
-    </p>
-  <% end %>
+<div class="d-flex justify-content-center">
+    <h1>Gym plans</h1>
 </div>
 
-<%= link_to "New gym plan", new_gym_plan_path %>
+  <% @gym_plans.each do |gym_plan| %>
+  <p>
+  <div class="d-flex justify-content-center">
+    <%= render gym_plan %>
+  </div>
+  </p>
+<% end %>
+
+
+<div class="d-flex justify-content-center">
+  <%= link_to "New gym plan", new_gym_plan_path, class: "btn btn-primary" %>
+</div>
