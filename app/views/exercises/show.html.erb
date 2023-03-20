@@ -3,8 +3,8 @@
 <%= render @exercise %>
 
 <div>
-  <%= link_to "Edit this exercise", edit_exercise_path(@exercise) %> |
-  <%= link_to "Back to exercises", exercises_path %>
+  <%= link_to "Edit this exercise", edit_gym_plan_exercise_path(@exercise.gym_plan_id, id: @exercise) %> |
+  <%= link_to "Back to exercises", gym_plan_exercises_path %>
 
-  <%= button_to "Destroy this exercise", @exercise, method: :delete %>
+  <%= button_to "Destroy this exercise", gym_plan_exercise_path, method: :delete %>
 </div>
