@@ -11,17 +11,25 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+<div class="card text-center">
+  <div class="card-header">
+    <h4>Editing gym plan</h4>
   </div>
 
-  <div>
-    <%= form.label :number_of_days, style: "display: block" %>
-    <%= form.number_field :number_of_days %>
+  <div class="card-body">
+    <div class="form-label">
+      <h5 class="card-title"> <%= form.label :name, style: "display: block" %> </h5>
+      <p class="card-text"> <%= form.text_field :name, class: "form-control" %></p>
+    </div>
+    <div class="form-label">
+      <h5 class="card-title"><%= form.label :number_of_days, style: "display: block" %> </h5>
+      <p class="card-text"> <%= form.number_field :number_of_days, class: "form-control" %></p>
+    </div>
   </div>
-
-  <div>
-    <%= form.submit %>
+</div>
+<p>
+  <div class="d-flex justify-content-center">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
+</p>
 <% end %>
