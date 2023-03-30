@@ -1,7 +1,10 @@
-<h1>Editing exercise</h1>
+<p>
+<div class="d-flex justify-content-center">
+  <%= render "form", exercise: @exercise %>
+</div>
+</p>
 
-<%= render "form", exercise: @exercise %>
-
+<div class="d-flex justify-content-center">
   <%= link_to "Show this exercise", edit_gym_plan_exercise_path(@exercise) %> |
   <%= link_to "Back to exercises", gym_plan_exercises_path %>
 </div>
