@@ -16,7 +16,7 @@ class ExercisesController < ApplicationController
 
   # GET /exercises/new
   def new
-      @gym_plan = GymPlan.find(params[:gym_plan_id])
+      @gym_plan = current_user.gym_plans.find(params[:gym_plan_id])
       @exercise = @gym_plan.exercises.new
   end
 
