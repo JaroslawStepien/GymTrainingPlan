@@ -22,7 +22,7 @@ class ExercisesController < ApplicationController
 
   # GET /exercises/1/edit
   def edit
-    @gym_plan = GymPlan.find(params[:gym_plan_id])
+    @gym_plan = current_user.gym_plans.find(params[:gym_plan_id])
     @exercise = @gym_plan.exercises.find(params[:id])
   end
 
