@@ -2,6 +2,14 @@
     <h1>Gym plans</h1>
 </div>
 
+<br />
+
+<div class="d-flex justify-content-center">
+  <%= link_to "New gym plan", new_gym_plan_path, class: "btn btn-primary" %>
+</div>
+
+<br />
+
 <% @gym_plans.each do |gym_plan| %>
   <p>
   <div class="d-flex justify-content-center">
@@ -11,6 +19,4 @@
 <% end %>
 
 
-<div class="d-flex justify-content-center">
-  <%= link_to "New gym plan", new_gym_plan_path, class: "btn btn-primary" %>
-</div>
+
