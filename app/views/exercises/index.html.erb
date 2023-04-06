@@ -1,6 +1,13 @@
 <div class="d-flex justify-content-center">
   <h1><%= @gym_plan.name %></h1>
 </div>
+<br />
+
+<div class="d-flex justify-content-center">
+  <%= link_to "New exercise", new_gym_plan_exercise_path, class: "btn btn-primary" %>
+</div>
+
+<br />
 
 <% @exercises.each do |exercise| %>
   <p>
@@ -10,6 +17,3 @@
   </p>
 <% end %>
 
-<div class="d-flex justify-content-center">
-    <%= link_to "New exercise", new_gym_plan_exercise_path, class: "btn btn-primary" %>
-</div>
