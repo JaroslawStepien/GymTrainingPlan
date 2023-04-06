@@ -28,12 +28,12 @@ class ExercisesController < ApplicationController
 
   # POST /exercises or /exercises.json
   def create
-    @gym_plan = current_user.gym_plans.find(params[:gym_plan_id])
+    @gym_plan = GymPlan.find(params[:gym_plan_id])
     @exercise = @gym_plan.exercises.new(exercise_params)
 
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to gym_plan_exercises_url, notice: "Exercise was successfully created." }
+        format.html { redirect_to gym_plan_exercises_url(@exercise), notice: "Exercise was successfully created." }
         format.json { render :show, status: :created, location: @exercise }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -57,14 +57,11 @@ class ExercisesController < ApplicationController
 
   # DELETE /exercises/1 or /exercises/1.json
   def destroy
-    @gym_plan = current_user.gym_plans.find(params[:gym_plan_id])
-    @exercise = @gym_plan.exercises.find(params[:id])
+    @exercise.destroy
 
     respond_to do |format|
-      if  @exercise.destroy
-        format.html { redirect_to gym_plan_exercises_url, notice: "Exercise was successfully destroyed." }
-        format.json { head :no_content }
-      end
+      format.html { redirect_to gym_plan_exercises_url, notice: "Exercise was successfully destroyed." }
+      format.json { head :no_content }
     end
   end
 
