@@ -28,7 +28,7 @@ class ExercisesController < ApplicationController
 
   # POST /exercises or /exercises.json
   def create
-    @gym_plan = GymPlan.find(params[:gym_plan_id])
+    @gym_plan = current_user.gym_plans.find(params[:gym_plan_id])
     @exercise = @gym_plan.exercises.new(exercise_params)
 
     respond_to do |format|
